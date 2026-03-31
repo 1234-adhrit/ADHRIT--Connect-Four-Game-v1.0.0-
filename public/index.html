@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect Four Arena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+
+      <main id="appCard" class="app-card solo-layout">
+        <section class="hero-panel">
+          <p class="eyebrow">Realtime Browser Game</p>
+          <h1>Connect Four Arena</h1>
+          <p class="hero-copy">
+            Create a room, share the code, and battle head-to-head in a classic
+            7 by 6 Connect Four match.
+          </p>
+
+          <div class="rules-card">
+            <h2>How it works</h2>
+            <p>
+              Enter your name first. A room can hold only two players. Red
+              moves first, yellow moves second, and the first player to connect
+              four discs wins.
+            </p>
+          </div>
+
+          <div id="nameStep" class="lobby-card step-card">
+            <p class="step-tag">Step 1</p>
+            <h2>Enter Your Name</h2>
+            <p class="step-copy">
+              Start by choosing the name you want to use in the lobby and in
+              the game room.
+            </p>
+
+            <div class="field-group">
+              <label for="playerName">Your name</label>
+              <input
+                id="playerName"
+                maxlength="18"
+                placeholder="Type your player name"
+                autocomplete="nickname"
+              />
+            </div>
+
+            <div class="lobby-actions">
+              <button id="continueNameButton" class="primary-button" type="button">
+                Continue
+              </button>
+            </div>
+          </div>
+
+          <div id="lobbyStep" class="hidden">
+            <div class="lobby-card step-card">
+              <div class="step-header">
+                <div>
+                  <p class="step-tag">Step 2</p>
+                  <h2>Create Or Join A Room</h2>
+                </div>
+                <button id="changeNameButton" class="ghost-button" type="button">
+                  Change Name
+                </button>
+              </div>
+
+              <p id="playerGreeting" class="step-copy"></p>
+
+              <div class="lobby-actions">
+                <button id="createRoomButton" class="primary-button" type="button">
+                  Create Room
+                </button>
+                <button id="createBotRoomButton" class="secondary-button" type="button">
+                  Play Vs Computer
+                </button>
+              </div>
+
+              <div class="join-section">
+                <div class="field-group">
+                  <label for="roomCode">Room code</label>
+                  <input
+                    id="roomCode"
+                    maxlength="5"
+                    placeholder="Enter code to join"
+                    autocomplete="off"
+                  />
+                </div>
+
+                <button id="joinRoomButton" class="secondary-button" type="button">
+                  Join Room
+                </button>
+              </div>
+
+              <div class="available-rooms">
+                <div class="available-header">
+                  <h2>Open Rooms</h2>
+                  <button id="refreshHintButton" class="ghost-button" type="button">
+                    Live
+                  </button>
+                </div>
+                <div id="roomsList" class="rooms-list"></div>
+              </div>
+            </div>
+          </div>
+
+          <p id="lobbyMessage" class="message-band" aria-live="polite"></p>
+        </section>
+
+        <section id="gamePanel" class="game-panel hidden">
+          <div class="status-panel">
+            <div>
+              <p class="status-label">Room</p>
+              <p id="roomDisplay" class="status-value">Not connected</p>
+            </div>
+            <div>
+              <p class="status-label">Turn</p>
+              <p id="turnDisplay" class="status-value">Waiting</p>
+            </div>
+            <div>
+              <p class="status-label">You</p>
+              <p id="youDisplay" class="status-value">Spectator</p>
+            </div>
+            <div>
+              <p class="status-label">Timer</p>
+              <p id="timerDisplay" class="status-value">--:--</p>
+            </div>
+          </div>
+
+          <div class="room-tools">
+            <button id="copyCodeButton" class="ghost-button" type="button">
+              Copy Room Code
+            </button>
+          </div>
+
+          <div class="players-panel">
+            <article class="player-card red-card">
+              <span class="disc-marker red-disc"></span>
+              <div>
+                <p class="player-label">Player Red</p>
+                <p id="playerOneName" class="player-name">Waiting...</p>
+              </div>
+            </article>
+
+            <article class="player-card yellow-card">
+              <span class="disc-marker yellow-disc"></span>
+              <div>
+                <p class="player-label">Player Yellow</p>
+                <p id="playerTwoName" class="player-name">Waiting...</p>
+              </div>
+            </article>
+          </div>
+
+          <p id="gameMessage" class="game-message" aria-live="polite">
+            Create or join a room to start playing.
+          </p>
+
+          <div id="boardWrap" class="board-wrap disabled">
+            <div id="board" class="board" aria-label="Connect Four board"></div>
+          </div>
+
+          <div class="game-actions">
+            <button id="startGameButton" class="primary-button hidden" type="button">
+              Start Game
+            </button>
+            <button id="restartButton" class="primary-button hidden" type="button">
+              New Round
+            </button>
+            <button id="leaveButton" class="secondary-button" type="button">
+              Leave Room
+            </button>
+          </div>
+
+          <section class="chat-panel">
+            <div class="chat-header">
+              <div>
+                <p class="chat-label">Room Chat</p>
+                <h2>Talk To The Other Player</h2>
+              </div>
+            </div>
+
+            <div id="chatMessages" class="chat-messages"></div>
+
+            <form id="chatForm" class="chat-form">
+              <input
+                id="chatInput"
+                maxlength="180"
+                placeholder="Write a message"
+                autocomplete="off"
+              />
+              <button class="secondary-button" type="submit">Send</button>
+            </form>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

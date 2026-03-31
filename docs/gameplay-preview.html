@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect Four Arena Gameplay Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+
+      <main class="app-card">
+        <section class="hero-panel">
+          <p class="eyebrow">Realtime Browser Game</p>
+          <h1>Connect Four Arena</h1>
+          <p class="hero-copy">
+            Challenge a friend or play against the computer with live chat, a
+            turn timer, and room-based game flow.
+          </p>
+
+          <div class="rules-card">
+            <h2>Current Match</h2>
+            <p>
+              Human room with chat, timer, host controls, restart flow, and
+              real-time turn updates.
+            </p>
+          </div>
+
+          <div class="available-rooms">
+            <div class="available-header">
+              <h2>Room Notes</h2>
+            </div>
+            <p>Host starts the game after the second player joins.</p>
+            <p>The timer passes the turn if a player does not move in time.</p>
+            <p>Chat stays inside the current room only.</p>
+          </div>
+        </section>
+
+        <section class="game-panel">
+          <div class="status-panel">
+            <div>
+              <p class="status-label">Room</p>
+              <p class="status-value">R4D2K</p>
+            </div>
+            <div>
+              <p class="status-label">Turn</p>
+              <p class="status-value">Sana's turn</p>
+            </div>
+            <div>
+              <p class="status-label">You</p>
+              <p class="status-value">Adhrit (red)</p>
+            </div>
+            <div>
+              <p class="status-label">Timer</p>
+              <p class="status-value timer-warning">00:04</p>
+            </div>
+          </div>
+
+          <div class="room-tools">
+            <button class="ghost-button" type="button">Copy Room Code</button>
+          </div>
+
+          <div class="players-panel">
+            <article class="player-card red-card">
+              <span class="disc-marker red-disc"></span>
+              <div>
+                <p class="player-label">Player Red</p>
+                <p class="player-name">Adhrit</p>
+              </div>
+            </article>
+
+            <article class="player-card yellow-card">
+              <span class="disc-marker yellow-disc"></span>
+              <div>
+                <p class="player-label">Player Yellow</p>
+                <p class="player-name">Sana</p>
+              </div>
+            </article>
+          </div>
+
+          <p class="game-message">Opponent is thinking...</p>
+
+          <div class="board-wrap">
+            <div class="board" aria-label="Connect Four board">
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc="yellow"></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc="red"></button>
+              <button class="cell" data-disc="yellow"></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc="yellow"></button>
+              <button class="cell" data-disc="red"></button>
+              <button class="cell" data-disc="yellow"></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+              <button class="cell" data-disc=""></button>
+
+              <button class="cell" data-disc="red"></button>
+              <button class="cell" data-disc="yellow"></button>
+              <button class="cell" data-disc="red"></button>
+              <button class="cell" data-disc="yellow"></button>
+              <button class="cell" data-disc="red"></button>
+              <button class="cell" data-disc="" ></button>
+              <button class="cell" data-disc=""></button>
+            </div>
+          </div>
+
+          <div class="game-actions">
+            <button class="secondary-button" type="button">Leave Room</button>
+          </div>
+
+          <section class="chat-panel">
+            <div class="chat-header">
+              <div>
+                <p class="chat-label">Room Chat</p>
+                <h2>Talk To The Other Player</h2>
+              </div>
+            </div>
+
+            <div class="chat-messages">
+              <article class="chat-bubble system">
+                <p class="chat-author">System</p>
+                <p class="chat-text">Adhrit started the game.</p>
+              </article>
+
+              <article class="chat-bubble self">
+                <p class="chat-author">Adhrit</p>
+                <p class="chat-text">I am trying the center columns first.</p>
+              </article>
+
+              <article class="chat-bubble">
+                <p class="chat-author">Sana</p>
+                <p class="chat-text">I see your setup. My timer is almost out.</p>
+              </article>
+
+              <article class="chat-bubble system">
+                <p class="chat-author">System</p>
+                <p class="chat-text">If the timer reaches zero, the turn passes automatically.</p>
+              </article>
+            </div>
+
+            <form class="chat-form">
+              <input value="Good luck!" readonly />
+              <button class="secondary-button" type="button">Send</button>
+            </form>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

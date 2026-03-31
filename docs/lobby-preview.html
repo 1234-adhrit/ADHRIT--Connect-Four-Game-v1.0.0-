@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect Four Arena Lobby Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+
+      <main class="app-card solo-layout">
+        <section class="hero-panel">
+          <p class="eyebrow">Realtime Browser Game</p>
+          <h1>Connect Four Arena</h1>
+          <p class="hero-copy">
+            Create a room, share the code, and battle head-to-head in a classic
+            7 by 6 Connect Four match.
+          </p>
+
+          <div class="rules-card">
+            <h2>How it works</h2>
+            <p>
+              Enter your name first. A room can hold only two players. Red
+              moves first, yellow moves second, and the first player to connect
+              four discs wins.
+            </p>
+          </div>
+
+          <div class="lobby-card step-card">
+            <div class="step-header">
+              <div>
+                <p class="step-tag">Step 2</p>
+                <h2>Create Or Join A Room</h2>
+              </div>
+              <button class="ghost-button" type="button">Change Name</button>
+            </div>
+
+            <p class="step-copy">
+              Adhrit, choose whether you want to create a room or join one with
+              a code.
+            </p>
+
+            <div class="lobby-actions">
+              <button class="primary-button" type="button">Create Room</button>
+              <button class="secondary-button" type="button">Play Vs Computer</button>
+            </div>
+
+            <div class="join-section">
+              <div class="field-group">
+                <label>Room code</label>
+                <input value="A7K9Q" readonly />
+              </div>
+
+              <button class="secondary-button" type="button">Join Room</button>
+            </div>
+
+            <div class="available-rooms">
+              <div class="available-header">
+                <h2>Open Rooms</h2>
+                <button class="ghost-button" type="button">Live</button>
+              </div>
+
+              <div class="rooms-list">
+                <article class="room-item">
+                  <div class="room-meta">
+                    <p class="room-code">R4D2K</p>
+                    <p class="room-subtext">Rohan is waiting - 1/2</p>
+                  </div>
+                  <button class="join-inline-button" type="button">Join</button>
+                </article>
+
+                <article class="room-item">
+                  <div class="room-meta">
+                    <p class="room-code">Q8M3N</p>
+                    <p class="room-subtext">Sana is waiting - 1/2</p>
+                  </div>
+                  <button class="join-inline-button" type="button">Join</button>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <p class="message-band success">Name saved. Now choose create room or join room.</p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
