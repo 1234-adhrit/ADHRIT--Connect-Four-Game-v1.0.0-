@@ -138,3 +138,7 @@ http://localhost:3000
 
 - Human rooms are real-time and update across browser tabs or devices on the same server.
 - The computer uses a simple strategy: it tries to win, block your win, and prefer strong center columns.
+
+## Play Online
+
+- https://adhrit-connect-four-game.onrender.com
